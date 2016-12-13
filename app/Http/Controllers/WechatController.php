@@ -67,7 +67,7 @@ class WechatController extends Controller
             if ($message->MsgType === 'event') {
                 switch ($message->Event) {
                     case 'subscribe':
-                        return new Text(['content' => $this->getSubText()]);
+                        return new Text(['content' => "欢迎关注中核瑞能科技有限公司官方微信公众号！"]);
                         break;
                     default:
                         break;
