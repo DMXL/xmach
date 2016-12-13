@@ -63,7 +63,7 @@ class WechatController extends Controller
         $wechatServer->setMessageHandler(function($message){
             // 注意，这里的 $message 不仅仅是用户发来的消息，也可能是事件
             // 当 $message->MsgType 为 event 时为事件
-            if ($message->MsgType == 'event') {
+            if ($message->MsgType === 'event') {
                 switch ($message->Event) {
                     case 'subscribe':
                         return "欢迎关注中核瑞能科技有限公司官方微信公众号！";
