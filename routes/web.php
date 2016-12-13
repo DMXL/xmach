@@ -20,5 +20,7 @@ Route::get('/', function () {
 | Package Routes
 |--------------------------------------------------------------------------
 */
-Route::any('wechat', 'WechatController@serve');
+Route::get('wechat', ['as' => 'verify', 'uses' => 'WechatController@verify']);
+Route::post('wechat', ['as' => 'user_request', 'uses' => 'WechatController@serve']);
+
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
