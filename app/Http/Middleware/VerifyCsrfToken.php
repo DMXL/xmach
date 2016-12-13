@@ -12,10 +12,6 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
-    ];
-
-    protected $except_routes = [
         'wechat/*',
     ];
 }
