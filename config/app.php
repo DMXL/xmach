@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Overtrue\LaravelWechat\ServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
         //
 

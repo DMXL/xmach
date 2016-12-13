@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 /*
 |--------------------------------------------------------------------------
-| Wechat Routes
+| Package Routes
 |--------------------------------------------------------------------------
 */
-Route::any('/wechat', 'WechatController@serve');
+Route::any('wechat', 'WechatController@serve');
+Route::get('logs', 'Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
