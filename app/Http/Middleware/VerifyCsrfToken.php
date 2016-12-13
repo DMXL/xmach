@@ -12,6 +12,10 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
+        //
+    ];
+
+    protected $except_routes = [
         'user_request',
     ];
 
