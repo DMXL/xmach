@@ -91,7 +91,12 @@ class WechatController extends Controller
      */
     public static function respondSubscription($qrscene)
     {
-        return "欢迎关注中核瑞能科技有限公司官方微信公众号！";
+        $welcomeText = "欢迎关注中核瑞能科技有限公司官方微信公众号！";
+
+        if(isset($qrscene))
+            return $welcomeText." KEY=".$qrscene;
+
+        return $welcomeText;
     }
 
     /**
