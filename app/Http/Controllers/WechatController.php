@@ -66,13 +66,13 @@ class WechatController extends Controller
             if ($message->MsgType === 'event') {
                 switch ($message->Event) {
                     case 'subscribe':
-                        return "欢迎关注中核瑞能科技有限公司官方微信公众号！";
+                        return self::respondSubscription($message->EventKey);
                         break;
                     default:
                         break;
                 }
             } else if ($message->MsgType === 'text'){
-                return $message->Content;
+                return self::respondText($message->Content);
             }
 
             return '';
@@ -81,5 +81,28 @@ class WechatController extends Controller
         Log::info('return response.');
 
         return $wechatServer->serve();
+    }
+
+    /**
+     * 处理关注事件
+     *
+     * @param $qrscene
+     * @return string
+     */
+    public static function respondSubscription($qrscene)
+    {
+        return "欢迎关注中核瑞能科技有限公司官方微信公众号！";
+    }
+
+    /**
+     * 处理文字消息
+     *
+     * @param $content
+     * @return string
+     */
+    public static function respondText($content)
+    {
+        $response = '收到文本消息 '.$content;
+        return $response;
     }
 }
