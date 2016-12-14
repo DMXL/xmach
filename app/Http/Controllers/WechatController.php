@@ -71,6 +71,8 @@ class WechatController extends Controller
                     default:
                         break;
                 }
+            } else if ($message->MsgType === 'text'){
+                return $message->Content;
             }
 
             return '';
