@@ -21,7 +21,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
-use Dmxl\LaravelBaiduVoice\Facades\BaiduVoice;
+use BaiduVoice;
 use Log;
 
 
@@ -123,11 +123,16 @@ class WechatController extends Controller
 
     public function respondVoice($mediaId)
     {
+        $voiceFilePath = storage_path().'/app/temp/'.$mediaId.'.amr';
+
         // Store the temporary voice file
         $this->wechat->material_temporary
-            ->download($mediaId, storage_path().'/app/temp/', $mediaId.".amr");
+            ->download($mediaId, $voiceFilePath);
 
-        $response = "临时素材已存储，MediaID=".$mediaId;
+        // Call Baidu Voice API to recognize.
+        $recognizedText = BaiduVoice::recognize($voiceFilePath);
+
+        $response = "您所发送的语音是: \"".$recognizedText."\"";
         return $response;
     }
 
