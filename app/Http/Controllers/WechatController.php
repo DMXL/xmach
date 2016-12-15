@@ -124,8 +124,8 @@ class WechatController extends Controller
     public function respondVoice($mediaId)
     {
         // Store the temporary voice file
-        $content = $this->wechat->material_temporary->getStream($mediaId);
-        Storage::put('app/temp/'.$mediaId, $content);
+        $this->wechat->material_temporary
+            ->download($mediaId, storage_path().'app/temp/', $mediaId.".amr");
 
         $response = "临时素材已存储，MediaID=".$mediaId;
         return $response;
