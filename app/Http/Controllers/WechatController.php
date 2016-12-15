@@ -20,7 +20,10 @@
  */
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Dmxl\LaravelBaiduVoice\Facades\BaiduVoice;
 use Log;
+
 
 class WechatController extends Controller
 {
@@ -78,7 +81,7 @@ class WechatController extends Controller
                     return self::respondText($message->Content);
                 // 语音
                 case 'voice':
-                    return self::respondVoice();
+                    return self::respondVoice($message->MediaId);
 
             }
 
@@ -91,7 +94,7 @@ class WechatController extends Controller
     }
 
     /**
-     * 处理关注事件
+     * 处理关注事件（可带有场景值）
      *
      * @param $qrscene
      * @return string
@@ -114,12 +117,18 @@ class WechatController extends Controller
      */
     public static function respondText($content)
     {
-        $response = '收到文本消息 '.$content;
+        $response = "收到文本消息 ".$content;
         return $response;
     }
 
-    public static function respondVoice()
+    public function respondVoice($mediaId)
     {
-        return;
+        // Store the temporary voice file
+        $content = $this->wechat->material_temporary->getStream($mediaId);
+        Storage::put('temp/'.$mediaId, $content);
+
+        return "临时素材已存储，MediaID=".$mediaId;
     }
+
+
 }
