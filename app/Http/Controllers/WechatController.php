@@ -123,14 +123,15 @@ class WechatController extends Controller
 
     public function respondVoice($mediaId)
     {
-        $voiceFilePath = storage_path().'/app/temp/'.$mediaId.'.amr';
+        $filePath = storage_path().'/app/temp/';
+        $fileName = $mediaId.'.amr';
 
         // Store the temporary voice file
         $this->wechat->material_temporary
-            ->download($mediaId, $voiceFilePath);
+            ->download($mediaId, $filePath, $fileName);
 
         // Call Baidu Voice API to recognize.
-        $recognizedText = BaiduVoice::recognize($voiceFilePath);
+        $recognizedText = BaiduVoice::recognize($filePath.$fileName);
 
         $response = "您所发送的语音是: \"".$recognizedText."\"";
         return $response;
