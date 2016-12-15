@@ -62,17 +62,24 @@ class WechatController extends Controller
 
         $wechatServer->setMessageHandler(function($message){
             // 注意，这里的 $message 不仅仅是用户发来的消息，也可能是事件
-            // 当 $message->MsgType 为 event 时为事件
-            if ($message->MsgType === 'event') {
-                switch ($message->Event) {
-                    case 'subscribe':
-                        return self::respondSubscription($message->EventKey);
-                        break;
-                    default:
-                        break;
-                }
-            } else if ($message->MsgType === 'text'){
-                return self::respondText($message->Content);
+            switch ($message->MsgType) {
+                // 事件
+                case 'event':
+                    switch ($message->Event) {
+                        case 'subscribe':
+                            return self::respondSubscription($message->EventKey);
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                // 文字
+                case 'text':
+                    return self::respondText($message->Content);
+                // 语音
+                case 'voice':
+                    return self::respondVoice();
+
             }
 
             return '';
@@ -109,5 +116,10 @@ class WechatController extends Controller
     {
         $response = '收到文本消息 '.$content;
         return $response;
+    }
+
+    public static function respondVoice()
+    {
+        return;
     }
 }

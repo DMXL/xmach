@@ -168,6 +168,7 @@ return [
          */
         Overtrue\LaravelWechat\ServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Dmxl\LaravelBaiduVoice\LaravelBaiduVoiceServiceProvider::class,
 
         //
 
@@ -232,6 +233,7 @@ return [
          * Package Service Providers...
          */
         'Wechat' => Overtrue\LaravelWechat\Facade::class,
+        'BaiduVoice' => Dmxl\LaravelBaiduVoice\Facades\BaiduVoice::class,
 
     ],
 
