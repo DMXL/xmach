@@ -78,9 +78,11 @@ class WechatController extends Controller
                 // 文字
                 case 'text':
                     return self::respondText($message->Content);
+                    break;
                 // 语音
                 case 'voice':
                     return self::respondVoice($message->MediaId);
+                    break;
 
             }
 
@@ -131,8 +133,9 @@ class WechatController extends Controller
 
         // Call Baidu Voice API to recognize.
         $recognizedResult = BaiduVoice::recognize($filePath.$fileName.'.amr');
+        $trimmedResult = ucfirst(substr($recognizedResult['result'][0], 0, -2));
 
-        $response = "您所发送的语音是: \"".$recognizedResult['result'][0]."\"";
+        $response = "您所发送的语音是: \"".$trimmedResult."\"";
         return $response;
     }
 
