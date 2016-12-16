@@ -67,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/DMXL/laravel-baidu-voice.git",
-                "reference": "35892176ba44775f5b2d404615b86dcfda746050"
+                "reference": "8c377a080af9d971fb2ccf3e985d091e966cdf79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/DMXL/laravel-baidu-voice/35892176ba44775f5b2d404615b86dcfda746050.zip",
-                "reference": "35892176ba44775f5b2d404615b86dcfda746050",
+                "url": "https://packagist.phpcomposer.com/files/DMXL/laravel-baidu-voice/8c377a080af9d971fb2ccf3e985d091e966cdf79.zip",
+                "reference": "8c377a080af9d971fb2ccf3e985d091e966cdf79",
                 "shasum": ""
             },
             "type": "library",
@@ -98,7 +98,7 @@
                 "laravel",
                 "voice"
             ],
-            "time": "2016-12-16 04:31:10"
+            "time": "2016-12-16 07:09:13"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
