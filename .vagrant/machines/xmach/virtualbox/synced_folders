@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/vagrant/xmach":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/xmach","hostpath":"/Users/keshi/Documents/Projects/PHP/xmach","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/keshi/Documents/Projects/PHP/xmach","disabled":false,"__vagrantfile":true}}}
