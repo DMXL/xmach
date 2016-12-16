@@ -20,6 +20,7 @@
  */
 namespace App\Http\Controllers;
 
+use BaiduVoice;
 use Log;
 
 
@@ -129,7 +130,7 @@ class WechatController extends Controller
             ->download($mediaId, $filePath, $fileName);
 
         // Call Baidu Voice API to recognize.
-        $recognizedText = app('baiduvoice')->recognize($filePath.$fileName);
+        $recognizedText = BaiduVoice::recognize($filePath.$fileName);
 
         $response = "您所发送的语音是: \"".$recognizedText."\"";
         return $response;
