@@ -132,9 +132,7 @@ class WechatController extends Controller
         // Call Baidu Voice API to recognize.
         $recognizedResult = BaiduVoice::recognize($filePath.$fileName.'.amr');
 
-        Log::debug('Recognized result:', $recognizedResult);
-
-        $response = "您所发送的语音是: \"".$recognizedResult['result']."\"";
+        $response = "您所发送的语音是: \"".$recognizedResult['result'][0]."\"";
         return $response;
     }
 
