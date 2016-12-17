@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a4e47e83ba67c188509cd7cca58444ef",
-    "content-hash": "48b6c81b1d30014d484ff4bec67492e0",
+    "hash": "1f47ca1d897835dddfd3006eadb72efe",
+    "content-hash": "3f6d6fddface6d65f14d09f2c806ae20",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -67,13 +67,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/DMXL/laravel-baidu-voice.git",
-                "reference": "9f3f9806c1ad6a5572c9d0a99d25af454da04385"
+                "reference": "fb83ee4917246b4f7811878b49fd6ad086012954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DMXL/laravel-baidu-voice/zipball/9f3f9806c1ad6a5572c9d0a99d25af454da04385",
-                "reference": "9f3f9806c1ad6a5572c9d0a99d25af454da04385",
+                "url": "https://packagist.phpcomposer.com/files/DMXL/laravel-baidu-voice/fb83ee4917246b4f7811878b49fd6ad086012954.zip",
+                "reference": "fb83ee4917246b4f7811878b49fd6ad086012954",
                 "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "^1.17"
             },
             "type": "library",
             "autoload": {
@@ -98,7 +101,7 @@
                 "laravel",
                 "voice"
             ],
-            "time": "2016-12-16 15:19:59"
+            "time": "2016-12-17 02:27:20"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3269,7 +3272,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/sebastianbergmann/phpunit/af91da3f2671006ff5d0628023de3b7ac4d1ef09.zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/af91da3f2671006ff5d0628023de3b7ac4d1ef09",
                 "reference": "af91da3f2671006ff5d0628023de3b7ac4d1ef09",
                 "shasum": ""
             },
@@ -3923,7 +3926,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/css-selector/a37b3359566415a91cba55a2d95820b3fa1a9658.zip",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/a37b3359566415a91cba55a2d95820b3fa1a9658",
                 "reference": "a37b3359566415a91cba55a2d95820b3fa1a9658",
                 "shasum": ""
             },
@@ -3976,7 +3979,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/dom-crawler/51e979357eba65b1e6aac7cba75cf5aa6379b8f3.zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/51e979357eba65b1e6aac7cba75cf5aa6379b8f3",
                 "reference": "51e979357eba65b1e6aac7cba75cf5aa6379b8f3",
                 "shasum": ""
             },
@@ -4032,7 +4035,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/yaml/a7095af4b97a0955f85c8989106c249fa649011f.zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/a7095af4b97a0955f85c8989106c249fa649011f",
                 "reference": "a7095af4b97a0955f85c8989106c249fa649011f",
                 "shasum": ""
             },
